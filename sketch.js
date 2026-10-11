@@ -9,8 +9,8 @@ let activeHandle = null; // 'tl' | 'tr' | 'br' | 'bl' | 'rot'
 let resizeData = null;
 let rotateData = null;
 
-const W = 900;
-const H = 600;
+const W = 800;
+const H = 500;
 
 const HANDLE_R = 9;        // radius klik handle sudut
 const ROT_HANDLE_R = 9;    // radius klik handle rotate
