@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Paint - p5.js</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.11.10/p5.min.js"></script>
+</head>
+<body>
+  <div class="app">
+
+<header>
+  <div class="eyebrow">Creative drawing tool</div>
+  <h1>Mini Paint<span>.</span></h1>
+</header>
+
+
+    <div class="toolbar">
+      <div class="group">
+        <label>Tool</label>
+        <select id="tool">
+          <option value="select">Select / Transform</option>
+          <option value="point">Point</option>
+          <option value="line">Line</option>
+          <option value="triangle">Triangle</option>
+          <option value="rect">Rectangle</option>
+          <option value="ellipse">Ellipse</option>
+          <option value="arc">Arc</option>
+          <option value="quad">Quad</option>
+          <option value="polygon">Polygon</option>
+          <option value="image">Image</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <label>Fill</label>
+        <input id="fillColor" type="color" value="#2563eb">
+      </div>
+
+      <div class="group">
+        <label>Stroke</label>
+        <input id="strokeColor" type="color" value="#111827">
+      </div>
+
+      <div class="group">
+        <label>Stroke</label>
+        <input id="strokeWeight" type="number" min="0" max="30" value="2">
+      </div>
+
+      <div class="group">
+        <label>Polygon sides</label>
+        <input id="polySides" type="number" min="3" max="12" value="6">
+      </div>
+
+      <div class="group buttons">
+        <button id="uploadBtn">Load Image</button>
+        <input id="imageInput" type="file" accept="image/*" hidden>
+        <button id="deleteBtn">Delete</button>
+        <button id="clearBtn">Clear</button>
+        <button id="saveBtn">Save PNG</button>
+      </div>
+    </div>
+
+    <div class="transform">
+      <strong>Transform selected:</strong>
+      <button data-action="left">← Move</button>
+      <button data-action="right">Move →</button>
+      <button data-action="up">↑ Move</button>
+      <button data-action="down">Move ↓</button>
+      <button data-action="rotateLeft">↶ Rotate</button>
+      <button data-action="rotateRight">↷ Rotate</button>
+      <button data-action="scaleDown">- Scale</button>
+      <button data-action="scaleUp">+ Scale</button>
+    </div>
+
+    <main>
+      <div id="canvasWrap"></div>
+      <aside>
+        <h2>Petunjuk</h2>
+        <ol>
+          <li>Pilih shape.</li>
+          <li>Drag di canvas untuk membuat objek.</li>
+          <li>Pilih <b>Select / Transform</b> untuk memilih objek.</li>
+          <li>Drag objek untuk memindahkan.</li>
+          <li>Gunakan tombol transform untuk rotate/scale.</li>
+          <li>Untuk image, klik <b>Load Image</b>.</li>
+        </ol>
+      </aside>
+    </main>
+  </div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
